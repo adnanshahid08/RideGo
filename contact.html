@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | RideGo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="RideGo home">
+        <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+        <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+      </a>
+      <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+        <a href="index.html" data-page="index.html">Home</a>
+        <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+        <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+        <a href="about.html" data-page="about.html">About</a>
+        <a href="contact.html" data-page="contact.html" class="active">Contact</a>
+        <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+        <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+        <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+        <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="container contact-hero-inner">
+        <span class="contact-eyebrow"><i class="bi bi-chat-dots-fill"></i> WE'RE HERE TO HELP</span>
+        <h1>Let’s talk about your <span>journey.</span></h1>
+        <p>Questions, feedback, or need help with a booking? Send us a message and we’ll be happy to help.</p>
+      </div>
+    </section>
+
+    <section class="container contact-layout" aria-label="Contact RideGo">
+      <aside class="contact-info">
+        <span class="contact-eyebrow">CONTACT INFORMATION</span>
+        <h2>Get in touch</h2>
+        <p class="contact-muted">Use the form or reach out through the details below.</p>
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><i class="bi bi-envelope-fill"></i></span>
+          <div><strong>Email support</strong><a href="mailto:adnanshahid983880@gmail.com">adnanshahid983880@gmail.com</a><small>For booking questions and feedback</small></div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><i class="bi bi-telephone-fill"></i></span>
+          <div><strong>Phone support</strong><a href="tel:+919569169366">+91 95691 69366</a><small>Call for booking questions and feedback</small></div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></span>
+          <div><strong>Service area</strong><span>Badlapur, Mumbra & nearby areas</span><small>Local ride-booking demo</small></div>
+        </div>
+        <div class="contact-note"><i class="bi bi-shield-check"></i><span><strong>Your feedback matters.</strong><br>This college project uses a demo contact form; it does not send real emails.</span></div>
+      </aside>
+
+      <section class="contact-form-card">
+        <div class="contact-form-heading">
+          <span class="contact-eyebrow">SEND A MESSAGE</span>
+          <h2>How can we help?</h2>
+          <p>Fill in the details below. Fields marked * are required.</p>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="contact-fields-two">
+            <div class="contact-field"><label for="contactName">Full name *</label><input id="contactName" name="name" type="text" placeholder="Your name" maxlength="80" required></div>
+            <div class="contact-field"><label for="contactEmail">Email address *</label><input id="contactEmail" name="email" type="email" placeholder="you@example.com" maxlength="120" required></div>
+          </div>
+          <div class="contact-field"><label for="contactSubject">Subject *</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="">Choose a subject</option>
+              <option>Booking support</option><option>Fare or payment question</option><option>Cancellation</option><option>Feedback or suggestion</option><option>Other</option>
+            </select>
+          </div>
+          <div class="contact-field"><label for="contactMessage">Message *</label><textarea id="contactMessage" name="message" rows="5" placeholder="Tell us how we can help..." maxlength="1500" required></textarea><small class="contact-counter"><span id="messageCount">0</span>/1500 characters</small></div>
+          <p id="contactFeedback" class="contact-feedback" role="status" aria-live="polite"></p>
+          <button class="contact-submit" type="submit"><span>Send Message</span><i class="bi bi-arrow-right"></i></button>
+          <p class="contact-privacy"><i class="bi bi-lock-fill"></i> Demo only: your message is stored in this browser.</p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="bi bi-car-front-fill"></i></span><span class="logo-name">Ride<span>Go</span></span></a>
+        <p>Smart rides. Better journeys. Simple, reliable and convenient ride booking.</p>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="book-ride.html">Book Ride</a><a href="my-rides.html">My Rides</a></div>
+      <div class="footer-links"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="dashboard.html">Dashboard</a></div>
+    </div>
+    <div class="container footer-bottom"><p>© 2026 RideGo. All rights reserved.</p><p>FSJ Mini Project</p></div>
+  </footer>
+  <script src="js/contact.js"></script>
+  <script src="js/auth-state.js"></script>
+</body>
+</html>

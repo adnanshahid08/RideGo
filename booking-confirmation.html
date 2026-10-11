@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Confirmed | RideGo</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <!-- Confirmation CSS -->
+    <link rel="stylesheet"
+        href="css/confirmation.css">
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <!-- FIXED SINGLE NAVBAR -->
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo" aria-label="RideGo home">
+      <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+      <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+    </a>
+    <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+      <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+      <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+      <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+      <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main class="confirmation-page">
+
+        <div class="container">
+
+
+            <!-- Success Header -->
+
+            <section class="confirmation-header">
+
+                <div class="success-icon">
+
+                    <i class="bi bi-check-lg"></i>
+
+                </div>
+
+
+                <h1>
+                    Ride Booked Successfully!
+                </h1>
+
+
+                <p>
+                    Your ride has been confirmed.
+                    Your driver has been assigned.
+                </p>
+
+            </section>
+
+
+
+            <!-- =========================
+                 BOOKING CARD
+            ========================== -->
+
+            <section class="booking-card">
+
+
+                <!-- Booking Top -->
+
+                <div class="booking-card-header">
+
+                    <div>
+
+                        <span class="small-label">
+                            BOOKING ID
+                        </span>
+
+                        <h2 id="bookingId">
+                            RG-000000
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="booking-status"
+                        id="bookingStatus">
+
+                        <i class="bi bi-person-check-fill"></i>
+
+                        Driver Assigned
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     ROUTE
+                ========================== -->
+
+                <div class="route-section">
+
+
+                    <div class="route-point">
+
+                        <div class="route-icon pickup-icon">
+
+                            <i class="bi bi-circle-fill"></i>
+
+                        </div>
+
+
+                        <div class="route-info">
+
+                            <span>
+                                PICKUP
+                            </span>
+
+                            <strong id="pickup">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="route-line"></div>
+
+
+
+                    <div class="route-point">
+
+                        <div class="route-icon destination-icon">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                        </div>
+
+
+                        <div class="route-info">
+
+                            <span>
+                                DESTINATION
+                            </span>
+
+                            <strong id="destination">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RIDE DETAILS
+                ========================== -->
+
+                <div class="ride-details">
+
+
+                    <div class="detail-item">
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                        <div>
+
+                            <span>
+                                Ride Type
+                            </span>
+
+                            <strong id="rideType">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="detail-item">
+
+                        <i class="bi bi-signpost-2-fill"></i>
+
+                        <div>
+
+                            <span>
+                                Distance
+                            </span>
+
+                            <strong id="distance">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="detail-item">
+
+                        <i class="bi bi-clock-fill"></i>
+
+                        <div>
+
+                            <span>
+                                Estimated Time
+                            </span>
+
+                            <strong id="estimatedTime">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="detail-item">
+
+                        <i class="bi bi-currency-rupee"></i>
+
+                        <div>
+
+                            <span>
+                                Total Fare
+                            </span>
+
+                            <strong id="fare">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     DRIVER DETAILS
+                ========================== -->
+
+                <div class="driver-section">
+
+                    <div class="section-title">
+
+                        <i class="bi bi-person-badge-fill"></i>
+
+                        <h3>
+                            Driver Details
+                        </h3>
+
+                    </div>
+
+
+                    <div class="driver-card">
+
+                        <div class="driver-avatar">
+
+                            <i class="bi bi-person-fill"></i>
+
+                        </div>
+
+
+                        <div class="driver-info">
+
+                            <strong id="driverName">
+                                Rahul Sharma
+                            </strong>
+
+                            <span>
+                                Your RideGo Driver
+                            </span>
+
+                        </div>
+
+
+                        <div class="vehicle-info">
+
+                            <strong id="vehicleNumber">
+                                MH 05 AB 1234
+                            </strong>
+
+                            <span>
+                                Vehicle Number
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     SAFETY MESSAGE
+                ========================== -->
+
+                <div class="safety-message">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <div>
+
+                        <strong>
+                            Ride safely with RideGo
+                        </strong>
+
+                        <p>
+                            Verify the driver and vehicle
+                            details before starting your ride.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     ACTION BUTTONS
+                ========================== -->
+
+                <div class="confirmation-actions">
+
+                    <a href="my-rides.html"
+                        class="btn btn-primary">
+
+                        <i class="bi bi-list-ul"></i>
+
+                        View My Rides
+
+                    </a>
+
+
+                    <a href="dashboard.html"
+                        class="btn btn-secondary">
+
+                        <i class="bi bi-speedometer2"></i>
+
+                        Go to Dashboard
+
+                    </a>
+
+
+                    <a href="book-ride.html"
+                        class="btn btn-outline">
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Book Another Ride
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="index.html"
+                        class="logo">
+
+                        <span class="logo-icon">
+
+                            <i class="bi bi-car-front-fill"></i>
+
+                        </span>
+
+                        <span>
+                            RideGo
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Smart rides. Better journeys.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="book-ride.html">
+                        Book Ride
+                    </a>
+
+                    <a href="my-rides.html">
+                        My Rides
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 RideGo. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // ==========================================
+        // GET CURRENT BOOKING
+        // ==========================================
+
+        const savedBooking =
+            localStorage.getItem("rideGoCurrentBooking");
+
+
+        // If no booking exists
+        if (!savedBooking) {
+
+            alert(
+                "No booking found. Please book a ride first."
+            );
+
+            window.location.href =
+                "book-ride.html";
+
+        }
+
+
+        // Convert JSON into object
+        const booking =
+            JSON.parse(savedBooking);
+
+
+
+        // ==========================================
+        // SAVE BOOKING TO RIDE HISTORY
+        // ==========================================
+
+        let rideHistory =
+            JSON.parse(
+                localStorage.getItem("rideGoBookings")
+            ) || [];
+
+
+        // Check whether this booking already exists
+        const alreadyExists =
+            rideHistory.some(function (ride) {
+
+                return ride.bookingId ===
+                    booking.bookingId;
+
+            });
+
+
+
+        // Add booking to history
+        if (!alreadyExists) {
+
+            rideHistory.push({
+
+                bookingId:
+                    booking.bookingId,
+
+                pickup:
+                    booking.pickup,
+
+                destination:
+                    booking.destination,
+
+                rideType:
+                    booking.rideType,
+
+                distance:
+                    booking.distance,
+
+                estimatedTime:
+                    booking.estimatedTime,
+
+                fare:
+                    booking.fare,
+
+                // NEW STATUS
+                status:
+                    "Driver Assigned",
+
+                date:
+                    new Date().toISOString()
+
+            });
+
+
+            // Save updated history
+            localStorage.setItem(
+                "rideGoBookings",
+                JSON.stringify(rideHistory)
+            );
+
+        }
+
+
+
+        // ==========================================
+        // DISPLAY BOOKING INFORMATION
+        // ==========================================
+
+
+        // Booking ID
+        document.getElementById(
+            "bookingId"
+        ).textContent =
+            booking.bookingId;
+
+
+
+        // Pickup
+        document.getElementById(
+            "pickup"
+        ).textContent =
+            booking.pickup;
+
+
+
+        // Destination
+        document.getElementById(
+            "destination"
+        ).textContent =
+            booking.destination;
+
+
+
+        // Ride Type
+        document.getElementById(
+            "rideType"
+        ).textContent =
+            booking.rideType;
+
+
+
+        // Distance
+        document.getElementById(
+            "distance"
+        ).textContent =
+            booking.distance + " km";
+
+
+
+        // Estimated Time
+        document.getElementById(
+            "estimatedTime"
+        ).textContent =
+            booking.estimatedTime + " min";
+
+
+
+        // Fare
+        document.getElementById(
+            "fare"
+        ).textContent =
+            "₹" + booking.fare;
+
+
+
+        // ==========================================
+        // DEMO DRIVER DETAILS
+        // ==========================================
+
+        const driver = {
+
+            name:
+                "Rahul Sharma",
+
+            vehicle:
+                "MH 05 AB 1234"
+
+        };
+
+
+
+        document.getElementById(
+            "driverName"
+        ).textContent =
+            driver.name;
+
+
+
+        document.getElementById(
+            "vehicleNumber"
+        ).textContent =
+            driver.vehicle;
+
+    </script>
+    <script src="js/auth-state.js"></script>
+
+</body>
+
+</html>

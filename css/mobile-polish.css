@@ -1,0 +1,395 @@
+/* RideGo mobile polish: intentionally scoped to small screens only.
+   Desktop/tablet layouts and all JavaScript functionality remain untouched. */
+@media (max-width: 600px) {
+  html { -webkit-text-size-adjust: 100%; }
+  body { overflow-x: hidden; }
+  img, svg, video, canvas { max-width: 100%; }
+  .container { width: min(100% - 28px, 100%); margin-inline: auto; }
+
+  /* Shared navigation */
+  .navbar { min-height: 64px; }
+  .nav-container, .auth-nav-container { min-height: 64px; gap: 10px; }
+  .logo { gap: 8px; min-width: 0; }
+  .logo-name { font-size: 22px; }
+  .logo-icon { flex: 0 0 auto; }
+  .mobile-menu-btn { flex: 0 0 42px; width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; }
+  .nav-links { max-width: calc(100vw - 28px); }
+
+  /* Home page */
+  .hero { padding-top: 38px; padding-bottom: 30px; }
+  .hero-container { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .hero-content { min-width: 0; }
+  .hero h1, .hero-title { font-size: clamp(32px, 9vw, 42px); line-height: 1.12; overflow-wrap: anywhere; }
+  .hero-text { font-size: 15px; line-height: 1.65; }
+  .hero-buttons { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hero-stats .stat { min-width: 0; padding: 12px 6px; }
+  .quick-booking { width: 100%; min-width: 0; padding: 20px 16px; border-radius: 20px; }
+  .quick-top { gap: 12px; }
+  .quick-booking .location-field { min-width: 0; gap: 10px; padding-block: 14px; }
+  .location-content { min-width: 0; }
+  .location-content input, .location-content select { width: 100%; min-width: 0; font-size: 16px; }
+  .quick-booking button, .quick-booking .btn { width: 100%; min-height: 46px; }
+  .features-grid, .locations-grid, .quick-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+
+  /* Booking page and ride choices */
+  .booking-page { padding: 30px 0 42px; }
+  .booking-page-heading { margin-bottom: 22px; }
+  .booking-page-heading h1, .booking-page h1 { font-size: clamp(30px, 8vw, 38px); line-height: 1.15; }
+  .booking-card, .location-card, .fare-card { width: 100%; min-width: 0; padding: 18px 15px; border-radius: 18px; }
+  /* Two-column ride choices on mobile (Bike/Auto, Sedan/SUV) */
+  .booking-ride-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; align-items: stretch; }
+  .booking-ride-card { min-width: 0; width: 100%; padding: 13px 11px; border-radius: 16px; }
+  .booking-ride-card .booking-ride-icon, .booking-ride-card .ride-icon { width: 48px; height: 48px; }
+  .booking-ride-card .booking-ride-info { gap: 8px; }
+  .booking-ride-card .booking-ride-info span { font-size: 11px; }
+  .booking-ride-card .booking-ride-price { font-size: 14px; }
+  .booking-ride-content { min-width: 0; }
+  .booking-ride-title { font-size: 18px; }
+  .ride-selection { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  /* Compact fare summary: 2 columns, three balanced rows */
+  .fare-section { margin-top: 24px; }
+  .fare-card { margin-top: 0; padding: 17px 13px; border-radius: 18px; }
+  .fare-header { gap: 10px; margin-bottom: 16px; }
+  .fare-header h2 { font-size: 21px; line-height: 1.25; }
+  .fare-icon { flex: 0 0 40px; width: 40px; height: 40px; }
+  .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .summary-item { min-width: 0; min-height: 76px; padding: 12px 10px; border-radius: 12px; overflow-wrap: anywhere; }
+  .summary-label { margin-bottom: 6px; font-size: 11px; line-height: 1.3; }
+  .summary-item strong { font-size: 14px; line-height: 1.35; }
+  .summary-item .fare-price { font-size: 21px; }
+  .fare-formula { align-items: flex-start; padding: 11px; font-size: 12px; line-height: 1.45; }
+  .fare-card .btn, .fare-card button { width: 100%; }
+  .booking-page button, .booking-page .btn, .fare-card button, .confirmation-actions .btn { min-height: 46px; }
+
+  /* Confirmation and My Rides */
+  .confirmation-page, .rides-page, .dashboard-page, .about-page { padding-top: 28px; padding-bottom: 38px; }
+  .booking-card-header { gap: 12px; }
+  .ride-details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .detail-item { min-width: 0; padding: 12px 9px; overflow-wrap: anywhere; }
+  .detail-item strong { overflow-wrap: anywhere; }
+  .driver-card { min-width: 0; }
+  .vehicle-info { min-width: 0; overflow-wrap: anywhere; }
+  .confirmation-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .confirmation-actions .btn { width: 100%; }
+  .rides-history, .current-ride-section, .recent-rides { min-width: 0; }
+  .current-ride-card, .ride-promo, .no-rides { padding: 18px 14px; }
+
+  /* Dashboard */
+  .dashboard-header { align-items: flex-start; gap: 12px; flex-direction: column; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .stat-card { min-width: 0; padding: 14px 12px; }
+  .stat-card * { overflow-wrap: anywhere; }
+  .recent-rides { overflow-x: auto; }
+
+  /* Login and Register */
+  .auth-page { min-height: 100svh; padding: 24px 14px; align-items: flex-start; }
+  .auth-wrapper { width: 100%; max-width: 440px; margin: auto; }
+  .auth-card { width: 100%; padding: 24px 18px; border-radius: 20px; }
+  .auth-card-header h1 { font-size: 28px; line-height: 1.2; }
+  .auth-features { grid-template-columns: 1fr; gap: 10px; }
+  .auth-submit { width: 100%; min-height: 48px; }
+  .auth-card input, .auth-card select { width: 100%; min-width: 0; font-size: 16px; }
+
+  /* Contact and About */
+  .contact-hero { padding: 34px 0 24px; }
+  .contact-layout { width: min(100% - 28px, 100%); padding-top: 20px; padding-bottom: 34px; gap: 14px; }
+  .contact-info, .contact-form-card { min-width: 0; padding: 20px 16px; border-radius: 18px; }
+  .contact-form-heading h2, .contact-hero h1 { font-size: clamp(27px, 7.5vw, 34px); line-height: 1.2; }
+  .contact-fields-two { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .contact-field input, .contact-field select, .contact-field textarea { width: 100%; min-width: 0; font-size: 16px; }
+  .contact-submit { width: 100%; min-height: 48px; }
+  .about-hero { padding-block: 32px; }
+  .mission-card, .feature-card { min-width: 0; padding: 18px 15px; }
+
+  /* Shared footer: remove oversized mobile gaps and stack cleanly */
+  .footer { margin-top: 28px; }
+  .footer-content { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-top: 28px; padding-bottom: 24px; }
+  .footer-brand, .footer-links { min-width: 0; }
+  .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; }
+  .footer-bottom { padding: 14px 0; text-align: center; }
+}
+
+@media (max-width: 380px) {
+  .container { width: min(100% - 22px, 100%); }
+  .hero-stats { grid-template-columns: 1fr; }
+  .quick-booking { padding: 17px 13px; }
+  .ride-details, .stats-grid { grid-template-columns: minmax(0, 1fr); }
+  .booking-ride-grid, .ride-selection, .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px; }
+  .booking-ride-card { padding: 11px 9px; }
+  .summary-item { padding: 10px 8px; }
+  .auth-card { padding: 21px 15px; }
+  .footer-links { grid-template-columns: 1fr; }
+}
+
+/* Mobile-only centering fix for the Book Ride location card.
+   No desktop rules are changed. */
+@media screen and (max-width: 600px) {
+  .booking-page > .container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  .booking-page .location-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .booking-page .location-card,
+  .booking-page .location-card * {
+    min-width: 0;
+  }
+}
+
+/* Mobile-only: center the entire 'Your ride summary' section.
+   Desktop layout and all JavaScript remain unchanged. */
+@media screen and (max-width: 600px) {
+  .booking-page .fare-section {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+    box-sizing: border-box;
+  }
+
+  .booking-page .fare-section .fare-card {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile footer refinement: compact two-column navigation.
+   Scoped to small screens so desktop remains unchanged. */
+@media screen and (max-width: 600px) {
+  .footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px 18px;
+    padding: 24px 16px 20px;
+    box-sizing: border-box;
+  }
+
+  .footer .footer-brand {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer .footer-brand p {
+    max-width: 34ch;
+    margin: 12px 0 0;
+    line-height: 1.5;
+  }
+
+  .footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .footer .footer-links h4 {
+    margin: 0 0 3px;
+    font-size: 14px;
+  }
+
+  .footer .footer-links a {
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .footer .footer-bottom {
+    padding: 13px 12px;
+    text-align: center;
+  }
+
+  .footer .footer-bottom p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* Additional mobile layout refinements based on device screenshots.
+   Every rule below is limited to phones; desktop styling is untouched. */
+@media screen and (max-width: 600px) {
+  /* Home hero: keep the three metrics in one balanced row. */
+  .hero .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .hero .hero-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 4px !important;
+    min-width: 0;
+    border-radius: 12px;
+  }
+  .hero .hero-stats .stat strong { font-size: clamp(16px, 4.8vw, 20px); line-height: 1.2; }
+  .hero .hero-stats .stat span { font-size: 11px; line-height: 1.35; }
+
+  /* Home ride-option cards: two columns, two rows. */
+  .ride-options .ride-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: stretch;
+  }
+  .ride-options .ride-card {
+    min-width: 0;
+    width: 100%;
+    padding: 16px 13px !important;
+    border-radius: 17px;
+    box-sizing: border-box;
+  }
+  .ride-options .ride-card-top { gap: 8px; align-items: flex-start; }
+  .ride-options .ride-card h3 { font-size: 17px; line-height: 1.25; overflow-wrap: anywhere; }
+  .ride-options .ride-card p { font-size: 12px; line-height: 1.45; }
+  .ride-options .ride-card .ride-icon { width: 46px; height: 46px; flex: 0 0 46px; }
+  .ride-options .ride-card .ride-card-bottom,
+  .ride-options .ride-card .ride-features { gap: 8px; flex-wrap: wrap; }
+  .ride-options .ride-card .ride-price,
+  .ride-options .ride-card .price { font-size: 14px; }
+
+  /* About page: feature cards become compact two-column tiles. */
+  .about-page .features-grid,
+  .features-section .features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: stretch;
+  }
+  .about-page .feature-card,
+  .features-section .feature-card {
+    min-width: 0;
+    width: 100%;
+    padding: 17px 13px !important;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+  .about-page .feature-card .feature-icon,
+  .features-section .feature-card .feature-icon { width: 42px; height: 42px; margin-bottom: 12px; }
+  .about-page .feature-card h3,
+  .features-section .feature-card h3 { font-size: 15px; line-height: 1.35; }
+  .about-page .feature-card p,
+  .features-section .feature-card p { font-size: 12px; line-height: 1.5; }
+}
+
+@media screen and (max-width: 380px) {
+  .ride-options .ride-card,
+  .about-page .feature-card,
+  .features-section .feature-card { padding: 14px 10px !important; }
+  .ride-options .ride-card h3 { font-size: 16px; }
+}
+
+/* Home page feature tiles: compact 2-column mobile layout only. */
+@media screen and (max-width: 600px) {
+  .why-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: stretch;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .why-grid .why-card {
+    min-width: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 17px 13px !important;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+  .why-grid .why-card h3 {
+    font-size: 15px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .why-grid .why-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .why-grid .why-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .why-grid .why-card { padding: 14px 10px !important; }
+}
+
+/* Tighten oversized vertical gaps on the Home page (phones only).
+   Desktop styling is intentionally unchanged. */
+@media screen and (max-width: 600px) {
+  .ride-options,
+  .why-section {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .ride-options .section-heading,
+  .why-section .section-heading {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ride-options .ride-grid {
+    margin-top: 0 !important;
+    row-gap: 12px !important;
+  }
+
+  .ride-options .ride-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .why-grid {
+    margin-top: 0 !important;
+    row-gap: 12px !important;
+  }
+
+  .why-grid .why-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .cta-section {
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .cta-box {
+    margin-top: 0 !important;
+    padding: 24px 18px !important;
+    gap: 18px !important;
+  }
+
+  .footer {
+    margin-top: 0 !important;
+  }
+}

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Ride - RideGo</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Booking CSS -->
+    <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <!-- FIXED SINGLE NAVBAR -->
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo" aria-label="RideGo home">
+      <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+      <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+    </a>
+    <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+      <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+      <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+      <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+      <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main class="booking-page">
+
+        <div class="container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="booking-page-heading">
+
+                <span class="section-label">
+                    RIDEGO BOOKING
+                </span>
+
+                <h1>
+                    Book your <span>ride</span>
+                </h1>
+
+                <p>
+                    Enter your locations, choose a ride and see
+                    your estimated fare before booking.
+                </p>
+
+            </div>
+
+
+            <!-- ================= LOCATION CARD ================= -->
+
+            <section class="location-card">
+
+                <div class="card-title">
+
+                    <div class="card-title-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+
+                    <div>
+                        <h2>Where are you going?</h2>
+
+                        <p>
+                            Select your pickup and destination
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="locations-grid">
+
+                    <!-- PICKUP -->
+
+                    <div class="form-group">
+
+                        <label for="pickup">
+                            <i class="bi bi-circle-fill pickup-label-icon"></i>
+                            Pickup Location
+                        </label>
+
+                        <select id="pickup">
+
+                            <option value="">
+                                Select pickup location
+                            </option>
+
+                            <option value="badlapur">
+                                Badlapur Station
+                            </option>
+
+                            <option value="ambernath">
+                                Ambernath
+                            </option>
+
+                            <option value="kalyan">
+                                Kalyan
+                            </option>
+
+                            <option value="ulhasnagar">
+                                Ulhasnagar
+                            </option>
+
+                            <option value="dombivli">
+                                Dombivli
+                            </option>
+
+                            <option value="thane">
+                                Thane
+                            </option>
+
+                            <option value="mumbra">
+                                Mumbra
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DESTINATION -->
+
+                    <div class="form-group">
+
+                        <label for="destination">
+                            <i class="bi bi-geo-alt-fill destination-label-icon"></i>
+                            Destination
+                        </label>
+
+                        <select id="destination">
+
+                            <option value="">
+                                Select destination
+                            </option>
+
+                            <option value="badlapur">
+                                Badlapur Station
+                            </option>
+
+                            <option value="ambernath">
+                                Ambernath
+                            </option>
+
+                            <option value="kalyan">
+                                Kalyan
+                            </option>
+
+                            <option value="ulhasnagar">
+                                Ulhasnagar
+                            </option>
+
+                            <option value="dombivli">
+                                Dombivli
+                            </option>
+
+                            <option value="thane">
+                                Thane
+                            </option>
+
+                            <option value="mumbra">
+                                Mumbra
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary calculate-btn"
+                    id="calculateBtn"
+                >
+                    <i class="bi bi-calculator"></i>
+                    Calculate Fare
+                </button>
+
+                <p class="form-error" id="locationError"></p>
+
+            </section>
+
+
+            <!-- ================= RIDE SELECTION ================= -->
+
+            <section class="ride-selection" id="rideSelection">
+
+                <div class="section-heading booking-section-heading">
+
+                    <span class="section-label">
+                        AVAILABLE RIDES
+                    </span>
+
+                    <h2>
+                        Choose your <span>ride</span>
+                    </h2>
+
+                    <p>
+                        Select the ride that suits your journey.
+                    </p>
+
+                </div>
+
+
+                <div class="booking-ride-grid">
+
+
+                    <!-- BIKE -->
+
+                    <button
+                        class="booking-ride-card"
+                        data-ride="Bike"
+                        data-base="20"
+                        data-rate="8"
+                        data-passengers="1"
+                    >
+
+                        <div class="booking-ride-image bike-image">
+                            <i class="bi bi-bicycle"></i>
+                        </div>
+
+                        <div class="booking-ride-content">
+
+                            <div class="booking-ride-title">
+
+                                <h3>Bike</h3>
+
+                                <span>
+                                    ₹8/km
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Fast & affordable
+                            </p>
+
+                            <div class="booking-ride-info">
+
+                                <span>
+                                    <i class="bi bi-person-fill"></i>
+                                    1 passenger
+                                </span>
+
+                                <span>
+                                    Base ₹20
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- AUTO -->
+
+                    <button
+                        class="booking-ride-card"
+                        data-ride="Auto"
+                        data-base="30"
+                        data-rate="12"
+                        data-passengers="3"
+                    >
+
+                        <div class="booking-ride-image auto-image">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+
+                        <div class="booking-ride-content">
+
+                            <div class="booking-ride-title">
+
+                                <h3>Auto</h3>
+
+                                <span>
+                                    ₹12/km
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Comfortable & economical
+                            </p>
+
+                            <div class="booking-ride-info">
+
+                                <span>
+                                    <i class="bi bi-people-fill"></i>
+                                    3 passengers
+                                </span>
+
+                                <span>
+                                    Base ₹30
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- SEDAN -->
+
+                    <button
+                        class="booking-ride-card"
+                        data-ride="Sedan"
+                        data-base="50"
+                        data-rate="18"
+                        data-passengers="4"
+                    >
+
+                        <div class="booking-ride-image sedan-image">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+
+                        <div class="booking-ride-content">
+
+                            <div class="booking-ride-title">
+
+                                <h3>Sedan</h3>
+
+                                <span>
+                                    ₹18/km
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Comfortable city travel
+                            </p>
+
+                            <div class="booking-ride-info">
+
+                                <span>
+                                    <i class="bi bi-people-fill"></i>
+                                    4 passengers
+                                </span>
+
+                                <span>
+                                    Base ₹50
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- SUV -->
+
+                    <button
+                        class="booking-ride-card"
+                        data-ride="SUV"
+                        data-base="70"
+                        data-rate="25"
+                        data-passengers="6"
+                    >
+
+                        <div class="booking-ride-image suv-image">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+
+                        <div class="booking-ride-content">
+
+                            <div class="booking-ride-title">
+
+                                <h3>SUV</h3>
+
+                                <span>
+                                    ₹25/km
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Spacious premium travel
+                            </p>
+
+                            <div class="booking-ride-info">
+
+                                <span>
+                                    <i class="bi bi-people-fill"></i>
+                                    6 passengers
+                                </span>
+
+                                <span>
+                                    Base ₹70
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FARE SUMMARY ================= -->
+
+            <section
+                class="fare-section"
+                id="fareSection"
+            >
+
+                <div class="fare-card">
+
+                    <div class="fare-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                FARE ESTIMATE
+                            </span>
+
+                            <h2>
+                                Your ride summary
+                            </h2>
+
+                        </div>
+
+                        <div class="fare-icon">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-grid">
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Pickup
+                            </span>
+
+                            <strong id="summaryPickup">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Destination
+                            </span>
+
+                            <strong id="summaryDestination">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Distance
+                            </span>
+
+                            <strong id="summaryDistance">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Estimated Time
+                            </span>
+
+                            <strong id="summaryTime">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Selected Ride
+                            </span>
+
+                            <strong id="summaryRide">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-label">
+                                Estimated Fare
+                            </span>
+
+                            <strong
+                                class="fare-price"
+                                id="summaryFare"
+                            >
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fare-formula">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <span id="formulaText">
+                            Select locations and a ride to
+                            calculate the fare.
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary confirm-btn"
+                        id="confirmBtn"
+                        disabled
+                    >
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Confirm Booking
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-icon">
+                        <i class="bi bi-car-front-fill"></i>
+                    </span>
+
+                    <span>
+                        Ride<span class="logo-highlight">Go</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Smart, simple and reliable ride booking
+                    for everyday journeys.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Company</h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Ride</h4>
+
+                <a href="book-ride.html">
+                    Book Ride
+                </a>
+
+                <a href="my-rides.html">
+                    My Rides
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Account</h4>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 RideGo. College FSJ Mini Project.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Booking JavaScript -->
+    <script src="js/booking.js"></script>
+    <script src="js/auth-state.js"></script>
+
+</body>
+</html>

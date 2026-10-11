@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - RideGo</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<!-- FIXED SINGLE NAVBAR -->
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo" aria-label="RideGo home">
+      <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+      <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+    </a>
+    <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+      <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+      <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+      <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+      <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main class="dashboard-page">
+
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <span class="section-label">
+                    RIDEGO ACCOUNT
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="userName">
+                        Rider
+                    </span>
+                </h1>
+
+                <p>
+                    Here's a quick overview of your
+                    ride activity.
+                </p>
+
+            </div>
+
+
+            <a
+                href="book-ride.html"
+                class="btn btn-primary"
+            >
+
+                <i class="bi bi-plus-lg"></i>
+
+                Book a Ride
+
+            </a>
+
+        </section>
+
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+
+                    <i class="bi bi-car-front-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Rides
+                    </span>
+
+                    <strong id="totalRides">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedRides">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+
+                    <i class="bi bi-x-circle-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Cancelled
+                    </span>
+
+                    <strong id="cancelledRides">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+
+                    <i class="bi bi-wallet2"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Spent
+                    </span>
+
+                    <strong id="totalSpent">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- RECENT RIDES -->
+
+        <section class="recent-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Rides
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="my-rides.html"
+                    class="view-all"
+                >
+
+                    View All
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <div
+                id="recentRides"
+                class="recent-rides"
+            ></div>
+
+
+
+            <div
+                id="noRecentRides"
+                class="no-rides"
+            >
+
+                <div class="no-rides-icon">
+
+                    <i class="bi bi-car-front"></i>
+
+                </div>
+
+                <h3>
+                    No rides yet
+                </h3>
+
+                <p>
+                    Book your first ride to see
+                    your activity here.
+                </p>
+
+                <a
+                    href="book-ride.html"
+                    class="btn btn-primary"
+                >
+                    Book a Ride
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="quick-section">
+
+
+            <span class="section-label">
+                QUICK ACTIONS
+            </span>
+
+
+            <div class="quick-grid">
+
+
+                <a
+                    href="book-ride.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+
+                        <i class="bi bi-plus-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Book a Ride
+                        </h3>
+
+                        <p>
+                            Choose your pickup,
+                            destination and ride.
+                        </p>
+
+                    </div>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+
+
+                <a
+                    href="my-rides.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+
+                        <i class="bi bi-clock-history"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Ride History
+                        </h3>
+
+                        <p>
+                            View all your previous
+                            bookings.
+                        </p>
+
+                    </div>
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container footer-container">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-icon">
+
+                    <i class="bi bi-car-front-fill"></i>
+
+                </span>
+
+                <span>
+
+                    Ride<span class="logo-highlight">
+                        Go
+                    </span>
+
+                </span>
+
+            </a>
+
+            <p>
+                Smart, simple and reliable ride booking
+                for everyday journeys.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <h4>
+                Ride
+            </h4>
+
+            <a href="book-ride.html">
+                Book Ride
+            </a>
+
+            <a href="my-rides.html">
+                My Rides
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <h4>
+                Account
+            </h4>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 RideGo. College FSJ Mini Project.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script src="js/dashboard.js"></script>
+<script src="js/auth-state.js"></script>
+
+</body>
+
+</html>

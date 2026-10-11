@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideGo - Smart Rides. Better Journeys.</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <!-- FIXED SINGLE NAVBAR -->
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo" aria-label="RideGo home">
+      <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+      <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+    </a>
+    <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+      <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+      <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+      <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+      <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+
+            <div class="container hero-container">
+
+
+                <!-- HERO LEFT -->
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+
+                        <i class="bi bi-lightning-charge-fill"></i>
+
+                        Smart rides. Better journeys.
+
+                    </div>
+
+
+                    <h1>
+
+                        Your ride,
+                        <span>your way.</span>
+
+                    </h1>
+
+
+                    <p class="hero-text">
+
+                        Book reliable rides in seconds.
+                        Choose your ride, check the estimated
+                        fare and get moving with RideGo.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="book-ride.html"
+                            class="btn btn-primary">
+
+                            <i class="bi bi-car-front-fill"></i>
+
+                            Book a Ride
+
+                        </a>
+
+
+                        <a
+                            href="#ride-options"
+                            class="btn btn-outline">
+
+                            Explore Rides
+
+                            <i class="bi bi-arrow-down"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- STATS -->
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+
+                            <strong>10K+</strong>
+
+                            <span>Rides</span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>5K+</strong>
+
+                            <span>Users</span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>4.8/5</strong>
+
+                            <span>Rating</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= QUICK BOOKING ================= -->
+
+                <div class="quick-booking">
+
+                    <div class="quick-top">
+
+                        <div>
+
+                            <span class="quick-label">
+                                QUICK BOOKING
+                            </span>
+
+                            <h2>
+                                Where are you going?
+                            </h2>
+
+                        </div>
+
+
+                        <div class="quick-icon">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PICKUP -->
+
+                    <div class="location-field">
+
+                        <div class="location-icon pickup">
+
+                            <i class="bi bi-circle-fill"></i>
+
+                        </div>
+
+
+                        <div class="location-content">
+
+                            <label for="homePickup">
+                                Pickup location
+                            </label>
+
+                            <select id="homePickup" aria-label="Pickup location">
+                                <option value="" selected disabled>Select pickup location</option>
+                                <option value="Badlapur Station">Badlapur Station</option>
+                                <option value="Ambernath">Ambernath</option>
+                                <option value="Kalyan">Kalyan</option>
+                                <option value="Ulhasnagar">Ulhasnagar</option>
+                                <option value="Dombivli">Dombivli</option>
+                                <option value="Thane">Thane</option>
+                                <option value="Mumbra">Mumbra</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESTINATION -->
+
+                    <div class="location-field">
+
+                        <div class="location-icon destination">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                        </div>
+
+
+                        <div class="location-content">
+
+                            <label for="homeDestination">
+                                Destination
+                            </label>
+
+                            <select id="homeDestination" aria-label="Destination">
+                                <option value="" selected disabled>Select destination</option>
+                                <option value="Badlapur Station">Badlapur Station</option>
+                                <option value="Ambernath">Ambernath</option>
+                                <option value="Kalyan">Kalyan</option>
+                                <option value="Ulhasnagar">Ulhasnagar</option>
+                                <option value="Dombivli">Dombivli</option>
+                                <option value="Thane">Thane</option>
+                                <option value="Mumbra">Mumbra</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="find-ride-btn"
+                        id="homeFindRide"
+                        type="button">
+
+                        <span>
+                            Find a Ride
+                        </span>
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="safe-booking">
+
+                        <i class="bi bi-shield-check"></i>
+
+                        Safe and simple ride booking
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RIDE OPTIONS ================= -->
+
+        <section
+            class="ride-options"
+            id="ride-options">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        CHOOSE YOUR RIDE
+                    </span>
+
+                    <h2>
+                        A ride for every journey
+                    </h2>
+
+                    <p>
+                        Pick the option that works best
+                        for your trip and budget.
+                    </p>
+
+                </div>
+
+
+                <div class="ride-grid">
+
+
+                    <!-- BIKE -->
+
+                    <div class="ride-card bike-card">
+
+                        <div class="ride-card-top">
+
+                            <div class="ride-icon bike">
+
+                                <i class="bi bi-bicycle"></i>
+
+                            </div>
+
+                            <span class="ride-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="ride-info">
+
+                            <h3>
+                                Bike
+                            </h3>
+
+                            <p>
+                                Quick and affordable
+                                for solo rides.
+                            </p>
+
+                        </div>
+
+
+                        <div class="ride-bottom">
+
+                            <div>
+
+                                <span class="from">
+                                    Starting from
+                                </span>
+
+                                <strong>
+                                    ₹8<span>/km</span>
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ride-feature">
+
+                                <i class="bi bi-lightning-fill"></i>
+
+                                Fast
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AUTO -->
+
+                    <div class="ride-card auto-card">
+
+                        <div class="ride-card-top">
+
+                            <div class="ride-icon auto">
+
+                                <i class="bi bi-taxi-front-fill"></i>
+
+                            </div>
+
+                            <span class="ride-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="ride-info">
+
+                            <h3>
+                                Auto
+                            </h3>
+
+                            <p>
+                                Comfortable rides
+                                for short trips.
+                            </p>
+
+                        </div>
+
+
+                        <div class="ride-bottom">
+
+                            <div>
+
+                                <span class="from">
+                                    Starting from
+                                </span>
+
+                                <strong>
+                                    ₹12<span>/km</span>
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ride-feature">
+
+                                <i class="bi bi-people-fill"></i>
+
+                                3 Seats
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEDAN -->
+
+                    <div class="ride-card sedan-card popular">
+
+                        <div class="popular-tag">
+
+                            <i class="bi bi-star-fill"></i>
+
+                            POPULAR
+
+                        </div>
+
+
+                        <div class="ride-card-top">
+
+                            <div class="ride-icon sedan">
+
+                                <i class="bi bi-car-front-fill"></i>
+
+                            </div>
+
+                            <span class="ride-number">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="ride-info">
+
+                            <h3>
+                                Sedan
+                            </h3>
+
+                            <p>
+                                Comfortable choice
+                                for everyday travel.
+                            </p>
+
+                        </div>
+
+
+                        <div class="ride-bottom">
+
+                            <div>
+
+                                <span class="from">
+                                    Starting from
+                                </span>
+
+                                <strong>
+                                    ₹18<span>/km</span>
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ride-feature">
+
+                                <i class="bi bi-star-fill"></i>
+
+                                Popular
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SUV -->
+
+                    <div class="ride-card suv-card">
+
+                        <div class="ride-card-top">
+
+                            <div class="ride-icon suv">
+
+                                <i class="bi bi-car-front"></i>
+
+                            </div>
+
+                            <span class="ride-number">
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="ride-info">
+
+                            <h3>
+                                SUV
+                            </h3>
+
+                            <p>
+                                Spacious rides for
+                                groups and families.
+                            </p>
+
+                        </div>
+
+
+                        <div class="ride-bottom">
+
+                            <div>
+
+                                <span class="from">
+                                    Starting from
+                                </span>
+
+                                <strong>
+                                    ₹25<span>/km</span>
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ride-feature">
+
+                                <i class="bi bi-people-fill"></i>
+
+                                6 Seats
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY RIDEGO ================= -->
+
+        <section class="why-section">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        WHY RIDEGO
+                    </span>
+
+                    <h2>
+                        Everything you need
+                        for a better ride
+                    </h2>
+
+                    <p>
+                        Designed around a simple,
+                        convenient and transparent
+                        booking experience.
+                    </p>
+
+                </div>
+
+
+                <div class="why-grid">
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon green">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+
+                        <h3>
+                            Quick Booking
+                        </h3>
+
+                        <p>
+                            Choose your pickup and destination
+                            and book your ride in just a few steps.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon blue">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+
+                        <h3>
+                            Transparent Fare
+                        </h3>
+
+                        <p>
+                            See an estimated fare before
+                            confirming your ride.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon orange">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+
+                        <h3>
+                            Multiple Ride Options
+                        </h3>
+
+                        <p>
+                            Choose from Bike, Auto, Sedan
+                            and SUV according to your needs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon purple">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+
+                        <h3>
+                            Ride History
+                        </h3>
+
+                        <p>
+                            View your current and previous
+                            rides whenever you need them.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon green">
+                            <i class="bi bi-grid-1x2-fill"></i>
+                        </div>
+
+                        <h3>
+                            Personal Dashboard
+                        </h3>
+
+                        <p>
+                            Track your rides, completed trips,
+                            cancellations and spending.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card">
+
+                        <div class="why-icon red">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <h3>
+                            Simple & Reliable
+                        </h3>
+
+                        <p>
+                            A clean interface designed to
+                            make every step easy to understand.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div>
+
+                        <span class="cta-label">
+                            READY TO RIDE?
+                        </span>
+
+                        <h2>
+                            Start your journey
+                            with RideGo.
+                        </h2>
+
+                        <p>
+                            Choose your destination
+                            and book your ride today.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="book-ride.html"
+                        class="cta-button">
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                        Book a Ride
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        <i class="bi bi-car-front-fill"></i>
+                    </span>
+
+                    <span class="logo-name">
+                        Ride<span>Go</span>
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Smart rides. Better journeys.
+                    Simple, reliable and convenient
+                    ride booking.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="book-ride.html">
+                    Book Ride
+                </a>
+
+                <a href="my-rides.html">
+                    My Rides
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 RideGo. All rights reserved.
+            </p>
+
+            <p>
+                FSJ Mini Project
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <style>
+        /* Homepage location dropdowns: match the existing input styling. */
+        .location-content select#homePickup,
+        .location-content select#homeDestination {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            border: 0;
+            outline: none;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            padding: 8px 28px 8px 0;
+            box-sizing: border-box;
+            appearance: auto;
+            -webkit-appearance: menulist;
+        }
+        .location-content select#homePickup:focus,
+        .location-content select#homeDestination:focus {
+            outline: 2px solid rgba(22, 163, 74, .25);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        .location-content select option { color: #17211b; background: #fff; }
+    </style>
+
+    <script>
+
+        /* Login/logout visibility is handled by js/auth-state.js. */
+
+
+        /* QUICK BOOKING */
+
+        const findRide =
+            document.getElementById(
+                "homeFindRide"
+            );
+
+
+        findRide.addEventListener(
+            "click",
+            function () {
+
+                const pickup =
+                    document.getElementById(
+                        "homePickup"
+                    ).value.trim();
+
+
+                const destination =
+                    document.getElementById(
+                        "homeDestination"
+                    ).value.trim();
+
+
+                if (!pickup || !destination) {
+
+                    alert(
+                        "Please enter pickup and destination."
+                    );
+
+                    return;
+
+                }
+
+
+                if (
+                    pickup.toLowerCase() ===
+                    destination.toLowerCase()
+                ) {
+
+                    alert(
+                        "Pickup and destination cannot be the same."
+                    );
+
+                    return;
+
+                }
+
+
+                localStorage.setItem(
+                    "rideGoHomePickup",
+                    pickup
+                );
+
+
+                localStorage.setItem(
+                    "rideGoHomeDestination",
+                    destination
+                );
+
+
+                window.location.href =
+                    "book-ride.html";
+
+            }
+        );
+
+    </script>
+
+    <script src="js/auth-state.js"></script>
+</body>
+
+</html>

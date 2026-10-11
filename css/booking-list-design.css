@@ -1,0 +1,62 @@
+/* RideGo ride selection refresh: original RideGo styling inspired by clean ride-choice interfaces */
+.booking-page .container { max-width: 1180px; }
+.booking-page-heading { padding-bottom: 28px; }
+.location-card { max-width: 920px; }
+.ride-selection { max-width: 1020px; margin: 44px auto 0; }
+.booking-section-heading { text-align: left; margin: 0 0 18px; }
+.booking-section-heading h2 { font-size: clamp(28px, 3vw, 36px); }
+.booking-section-heading p { margin-top: 8px; }
+.booking-ride-grid { display: flex !important; flex-direction: column; gap: 10px; }
+.booking-ride-card {
+  min-height: 0 !important;
+  padding: 18px 22px !important;
+  display: grid !important;
+  grid-template-columns: 78px minmax(0,1fr) minmax(105px, auto);
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #dce5df;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px rgba(25,55,35,.045);
+  background: #fff;
+  transform: none !important;
+}
+.booking-ride-card::after { width: 90px; height: 90px; top: -38px; right: -38px; background: rgba(22,163,74,.035); }
+.booking-ride-card:hover { transform: translateY(-1px) !important; border-color: #a9d8b8; box-shadow: 0 8px 20px rgba(25,55,35,.08); }
+.booking-ride-card.selected { border: 2px solid #16a34a; background: linear-gradient(90deg,#f0fbf3,#fff 70%); box-shadow: 0 7px 22px rgba(22,163,74,.10); }
+.booking-ride-image { width: 76px !important; height: 58px !important; margin: 0 !important; border-radius: 14px !important; font-size: 34px !important; }
+.booking-ride-content { min-width: 0; }
+.booking-ride-title { justify-content: flex-start; flex-wrap: wrap; gap: 12px; }
+.booking-ride-title h3 { font-size: 21px; }
+.booking-ride-title span { font-size: 14px; }
+.booking-ride-content > p { margin: 5px 0 8px; font-size: 14px; line-height: 1.45; }
+.booking-ride-info { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+.ride-estimate { position: relative; z-index: 1; text-align: right; min-width: 105px; }
+.ride-estimate-price { display: block; color: #17201a; font-size: 22px; font-weight: 800; white-space: nowrap; }
+.ride-estimate-meta { display: block; margin-top: 4px; color: #748078; font-size: 12px; white-space: nowrap; }
+.ride-estimate-label { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; padding: 4px 7px; border-radius: 999px; background: #edf8f0; color: #18733a; font-size: 10px; font-weight: 800; }
+.fare-section { max-width: 920px; margin-top: 28px; }
+.fare-card { border-radius: 20px; }
+@media (max-width: 760px) {
+  .booking-page .container { width: min(100% - 20px, 620px); }
+  .ride-selection { margin: 30px 8px 0; }
+  .booking-section-heading { text-align: left; }
+  .booking-ride-card { grid-template-columns: 58px minmax(0,1fr) auto; gap: 12px; padding: 14px !important; border-radius: 15px; }
+  .booking-ride-image { width: 56px !important; height: 52px !important; font-size: 28px !important; }
+  .booking-ride-title { gap: 7px; }
+  .booking-ride-title h3 { font-size: 17px; }
+  .booking-ride-title span { font-size: 12px; }
+  .booking-ride-content > p { font-size: 12px; margin: 4px 0 6px; }
+  .booking-ride-info { gap: 7px; font-size: 10px; }
+  .ride-estimate { min-width: 72px; }
+  .ride-estimate-price { font-size: 16px; }
+  .ride-estimate-meta { font-size: 10px; }
+  .ride-estimate-label { font-size: 9px; }
+  .fare-section { margin: 22px 8px 0; }
+}
+@media (max-width: 420px) {
+  .booking-ride-card { grid-template-columns: 46px minmax(0,1fr); }
+  .booking-ride-image { width: 44px !important; height: 44px !important; font-size: 24px !important; }
+  .ride-estimate { grid-column: 2; text-align: left; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+  .ride-estimate-meta { margin-top: 0; }
+  .ride-estimate-label { margin-top: 0; }
+}

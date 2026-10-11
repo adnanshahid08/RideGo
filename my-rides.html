@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>My Rides | RideGo</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <!-- Rides CSS -->
+    <link rel="stylesheet"
+        href="css/rides.css">
+  <link rel="stylesheet" href="css/mobile-polish.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <!-- FIXED SINGLE NAVBAR -->
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo" aria-label="RideGo home">
+      <span class="logo-icon"><i class="bi bi-car-front-fill"></i></span>
+      <span class="logo-name">Ride<span class="logo-highlight">Go</span></span>
+    </a>
+    <nav class="nav-links" id="mainNavLinks" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="book-ride.html" data-page="book-ride.html">Book Ride</a>
+      <a href="my-rides.html" data-page="my-rides.html">My Rides</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="dashboard.html" data-page="dashboard.html" class="nav-dashboard">Dashboard</a>
+      <a href="login.html" data-auth="logged-out" class="nav-login">Login</a>
+      <a href="register.html" data-auth="logged-out" class="nav-register register-btn">Register</a>
+      <a href="#" data-auth="logged-in" class="nav-logout" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main class="rides-page">
+
+        <div class="container">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <span class="section-label">
+                    RIDEGO ACCOUNT
+                </span>
+
+                <h1>
+                    My Rides
+                </h1>
+
+                <p>
+                    View your current ride and previous
+                    ride history.
+                </p>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CURRENT RIDE
+            ========================== -->
+
+            <section
+                class="current-ride-section"
+                id="currentRideSection">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACTIVE RIDE
+                        </span>
+
+                        <h2>
+                            Current Ride
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Current Ride Card -->
+
+                <div
+                    class="current-ride-card"
+                    id="currentRide">
+
+                    <!-- JavaScript will insert ride here -->
+
+                </div>
+
+
+                <!-- No Current Ride -->
+
+                <div
+                    class="empty-state"
+                    id="noCurrentRide"
+                    style="display: none;">
+
+                    <div class="empty-icon">
+
+                        <i class="bi bi-car-front"></i>
+
+                    </div>
+
+                    <h3>
+                        No active ride
+                    </h3>
+
+                    <p>
+                        You don't have any active rides
+                        at the moment.
+                    </p>
+
+                    <a href="book-ride.html"
+                        class="btn btn-primary">
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Book a Ride
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PREVIOUS RIDES
+            ========================== -->
+
+            <section class="history-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            HISTORY
+                        </span>
+
+                        <h2>
+                            Previous Rides
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="rides-history"
+                    id="ridesHistory">
+
+                    <!-- JavaScript will insert history -->
+
+                </div>
+
+
+                <!-- No History -->
+
+                <div
+                    class="empty-state"
+                    id="noHistory"
+                    style="display: none;">
+
+                    <div class="empty-icon">
+
+                        <i class="bi bi-clock-history"></i>
+
+                    </div>
+
+                    <h3>
+                        No previous rides
+                    </h3>
+
+                    <p>
+                        Your completed or cancelled rides
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 BOOK RIDE PROMO
+            ========================== -->
+
+            <section class="ride-promo">
+
+                <div>
+
+                    <span class="section-label">
+                        READY TO GO?
+                    </span>
+
+                    <h2>
+                        Book your next ride
+                    </h2>
+
+                    <p>
+                        Choose your pickup, destination
+                        and preferred ride.
+                    </p>
+
+                </div>
+
+
+                <a href="book-ride.html"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-car-front-fill"></i>
+
+                    Book a Ride
+
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="index.html"
+                        class="logo">
+
+                        <span class="logo-icon">
+
+                            <i class="bi bi-car-front-fill"></i>
+
+                        </span>
+
+                        <span>
+                            RideGo
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Smart rides. Better journeys.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="book-ride.html">
+                        Book Ride
+                    </a>
+
+                    <a href="my-rides.html">
+                        My Rides
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 RideGo. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/rides.js"></script>
+    <script src="js/auth-state.js"></script>
+
+</body>
+
+</html>
